@@ -42,12 +42,16 @@
             background-image: url(images/Polygon-up.png);
         }
 
-        .btn-select.on+.list-member {
+        .list-member.show {
             display: block;
         }
 
         .list-member {
             display: none;
+        }
+
+        .list-member {
+            box-sizing: border-box;
             margin-top: 20px;
             border: 1px solid #C4C4C4;
             box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.2);
@@ -73,6 +77,7 @@
         .list-member li button:hover {
             background-color: #F8E4FF;
         }
+
     </style>
 </head>
 
@@ -83,11 +88,21 @@
         <ul class="list-member">
             <li><button type="button" class="txt-ellipsis">Python</button></li>
             <li><button type="button" class="txt-ellipsis">Java</button></li>
-            <li><button type="button" class="txt-ellipsis"> JavaScript</button></li>
+            <li><button type="button" class="txt-ellipsis">JavaScript</button></li>
             <li><button type="button" class="txt-ellipsis">C#</button></li>
             <li><button type="button" class="txt-ellipsis">C/C++</button></li>
         </ul>
     </article>
+
+        <script>
+        const titleBox = document.querySelector('.btn-select');
+        const selectList = document.querySelector('.list-member');
+
+        titleBox.addEventListener('click', ()=> {
+            titleBox.classList.toggle('on');
+            selectList.classList.toggle('show');
+        });
+        </script>
 </body>
 
 </html>
